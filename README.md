@@ -1,15 +1,16 @@
 ## Huffman-Coding-Implementation-Java
 *  Implemented Huffman Coding in java and tested with Word file.
 *  Get the result of data compression rate.
-*  Data Struchers Used – Greedy Algorithms, Priority Queue, Hash Map, and Recursion.
+*  Key Techniques & Data Struchers Used – Greedy Algorithms, Priority Queue, Hash Map, Tree and Recursion.
 
-## Steps to test
-* Create orignal.txt file in files folder
-* Run test.java
-* It will shows all frequency of characters and Huffman codes.
-* final result of compression in percentage will shows.
+### Steps to test
+1. Create orignal.txt file in files folder
+2. Run test.java
+3. It will shows all frequency of characters and Huffman codes.
+4. final result of compression in percentage will shows.
+- Source Code [here](https://github.com/nagrajHiremath/Huffman-Coding-Implementation-Java/tree/main/src).
 
-## Sample Output
+### Sample Output
 ```
 ----- Test.java START -----
 * Loading the file...DONE
