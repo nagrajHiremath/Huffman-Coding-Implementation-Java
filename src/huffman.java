@@ -124,29 +124,6 @@ public class huffman {
 			}
 		}
 	}
-		
-	private void buildTree(){
-		buildMinHeap();  // Set all leaf nodes into MinHeap
-		node left, right;
-		while (! pq.isEmpty()){
-			left = pq.poll(); treeSize++;
-			if (pq.peek() != null){
-				right = pq.poll();  treeSize++;
-				root = new node('\0', left.weight + right.weight, left, right);
-			}
-			else{  // only left child. right=null
-				root = new node('\0', left.weight, left, null);
-			}
-			
-			if (pq.peek() != null){
-				pq.offer(root);
-			}
-			else{  // = Top root. Finished building the tree.
-				treeSize++;
-				break;
-			}
-		}
-	}
 	
 	private void buildMinHeap(){
 		for (Map.Entry<Character, Integer> entry: hmapWC.entrySet()){
