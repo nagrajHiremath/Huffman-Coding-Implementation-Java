@@ -77,53 +77,8 @@ public class huffman {
 		}
 	}
 	
-	private void writeDot(String fname){
-		if (treeSize > 1){
-			node n = root;
-			try (PrintWriter o = new PrintWriter(new BufferedWriter (new FileWriter(fname)))){
-				o.println("## Command to generate pdf:  dot -Tpdf test.dot -o test.pdf");
-				o.println("digraph g {");
-				dotWriteRecursion(n, o);  // Recursion
-				o.println("}");
-			}
-			catch (IOException e){
-				System.out.println(e);
-			}
-		}
-	}
 	
-	private void dotWriteRecursion(node n, PrintWriter o){
-		if (! isLeaf(n)){
-			if (n.left != null){  // has left kid
-				String t = "";
-				char c = n.left.ch;
-				if (c != '\0' && c != ' ' && c != '"' && c!= '\n')  // regular characters
-					t = "\\n " + c; 
-				else if (c == ' ') 
-					t = "\\n blank";
-				else if (c == '"')  //escape "
-					t = "\\n \\\"";
-				else if (c == '\n') 
-					t = "\\n /n";
-				o.println(" \"" + n.uid + "\\n" + n.weight + "\" -> \"" + n.left.uid + "\\n" + n.left.weight + t + "\" [color=red, label=0]");
-				dotWriteRecursion(n.left, o);
-			}
-			if (n.right != null){ // has right kid
-				String t = "";
-				char c = n.right.ch;	
-				if (c != '\0' && c != ' ' && c != '"' && c != '\n') // regular characters
-					t = "\\n " + c;
-				else if (c == ' ')
-					t = "\\n blank"; 
-				else if (c == '"')  //escape
-					t = "\\n \\\"";
-				else if (c == '\n')
-					t = "\\n /n";
-				o.println(" \"" + n.uid + "\\" +"n" + n.weight + "\" -> \"" + n.right.uid + "\\n" + n.right.weight + t + "\" [color=blue, label=1]");
-				dotWriteRecursion(n.right, o);
-			}
-		}
-	}
+	
 	
 	private void buildMinHeap(){
 		for (Map.Entry<Character, Integer> entry: hmapWC.entrySet()){
