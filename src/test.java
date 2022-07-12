@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class test{
-	public static void testHuffman(String orgStr, boolean show, String dotfilename){
+	public static void testHuffman(String orgStr, boolean show){
 		System.out.print("* Builiding Huffman Tree and Code Tables...");
 	    huffman h = new huffman(orgStr,show,dotfilename);
 	    System.out.println(" DONE");
@@ -74,13 +74,12 @@ public class test{
   public static void testbed(){
 	  boolean show = true ;
 	  String orgFile = "files/original.txt";
-	  String dotFile = "files/test.dot";
 	  
 	  System.out.print("* Loading the file...");
 	  String orgString = readFile(orgFile);
 	  System.out.println("DONE");
 	  
-	  testHuffman(orgString, show, dotFile);
+	  testHuffman(orgString, show);
   }
   public static void main(String[] args) {
 	  System.out.println("----- Test.java START -----");
