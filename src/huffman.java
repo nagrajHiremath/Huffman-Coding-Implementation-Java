@@ -54,7 +54,6 @@ public class huffman {
 		
 		countWord();  // STEP 1: Count frequency of word
 		buildTree();  // STEP 2: Build Huffman Tree
-		writeDot(dotfilename);  // STEP 3: Write .dot file to visualize the tree with Graphviz software
 		buildCodeTable();  // STEP 4: Build Huffman Code Table
 	}
 		
