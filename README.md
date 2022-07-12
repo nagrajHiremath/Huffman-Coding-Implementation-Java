@@ -8,7 +8,6 @@
 2. Run *test.java*
 3. It will shows all frequency of characters and Huffman codes.
 4. final result of compression in percentage will shows.
-- Source Code [here](https://github.com/nagrajHiremath/Huffman-Coding-Implementation-Java/tree/main/src).
 
 ### Sample Output
 ```
